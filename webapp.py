@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template
+from flask import Flask, url_for, render_template, request
 
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
 
@@ -8,7 +8,15 @@ def render_main():
 
 @app.route("/displaypage")
 def render_displaypage():
-    return render_template('displaypage.html')
+
+    brand = request.args['brands']
+    if brand == 'bmw':
+        dpage = 'bpage.html'
+    elif brand == 'benz':
+        dpage = 'mpage.html'
+    elif brand == 'audi':
+        dpage = 'apage.html'
+    return render_template(dpage)
 
 if __name__=="__main__":
     app.run(debug=False)

@@ -21,21 +21,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <title> Home PAge </title>
+        <title>Response Page</title>
     </head>
     <body>
-        <h1> How Much Does This Car Cost? </h1>
-        <form action= '/displaypage' id = mainform>
-            <label for="brands">Choose a car brand:</label>
-            <select id="brands" name="brands">
-                <option value="bmw">BMW</option>
-                <option value="benz">Mercedes-Benz</option>
-                <option value="audi">Audi</option>
-            </select>
-             <input type="submit" value="Submit">
-
-
-        </form>
-
+        <h1 class = tt>You have chosen....</h1>
+        <h4 class = brandi> Mercedes-Benz  </h4>
     </body>
 </html>

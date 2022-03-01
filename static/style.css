@@ -1,1 +1,18 @@
-
+#mainform{
+    margin-left: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+h1{
+    margin: 10px;
+    text-align: center;
+}
+.tt{
+    font-style: italic;
+    margin: 10px;
+    text-align: center;
+}
+.brandi{
+    margin: 10px;
+    text-align: center;
+}
