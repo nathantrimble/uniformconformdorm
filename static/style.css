@@ -2,9 +2,13 @@
     margin-left: 15px;
     margin-top: 20px;
     text-align: center;
+    font-size: 18px;
 }
 h1{
     margin: 10px;
+    text-align: center;
+}
+h4{
     text-align: center;
 }
 .tt{
@@ -15,4 +19,14 @@ h1{
 .brandi{
     margin: 10px;
     text-align: center;
+}
+p{
+    text-align: center;
+}
+.twoform{
+    text-align: center;
+    font-size: 18px;
+}
+form{
+    margin: 10px;
 }

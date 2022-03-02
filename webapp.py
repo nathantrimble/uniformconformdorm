@@ -18,5 +18,9 @@ def render_displaypage():
         dpage = 'apage.html'
     return render_template(dpage)
 
+@app.route("/moneypage")
+def render_moneypage():
+    return render_template('moneypage.html')
+
 if __name__=="__main__":
     app.run(debug=False)
