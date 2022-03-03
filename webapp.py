@@ -55,7 +55,13 @@ def render_moneypage():
      "C190": {"price":92000, "img":"c190.jpg"},
      "W116": {"price":200000, "img":"w116.jpg"},
     }
-    return render_template('moneypage.html')
+
+    carmod = request.args['models']
+
+    if  carmod in cardict:
+        pric = cardict[carmod]['price']
+        pic = cardict[carmod]['img']
+    return render_template('moneypage.html', cheese = pric, broto = pic)
 
 if __name__=="__main__":
     app.run(debug=False)
