@@ -14,11 +14,14 @@ def render_displaypage():
     brand = request.args['brands']
     if brand == 'bmw':
         dpage = 'bpage.html'
+        info = "Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational corporate manufacturer of luxury vehicles and motorcycles headquartered in Munich, Bavaria, Germany. The corporation was founded in 1916 as a manufacturer of aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945. Automobiles are marketed under the brands BMW, Mini and Rolls-Royce, and motorcycles are marketed under the brand BMW Motorrad. In 2017, BMW was the world's fourteenth-largest producer of motor vehicles, with 2,279,503 vehicles produced. The company has significant motorsport history, especially in touring cars, Formula 1, sports cars and the Isle of Man TT. BMW is headquartered in Munich and produces motor vehicles in Germany, Brazil, China, India, Mexico, the Netherlands, South Africa, the United Kingdom, and the United States."
     elif brand == 'benz':
         dpage = 'mpage.html'
+        info = 'Mercedes-Benz, commonly referred to as just Mercedes, is a German luxury automotive marque. Both Mercedes-Benz and Mercedes-Benz AG (a Mercedes-Benz Group subsidiary established in 2019) are headquartered in Stuttgart, Baden-Württemberg, Germany. Mercedes-Benz produces consumer luxury vehicles and commercial vehicles.[note 2] Its first Mercedes-Benz-badged vehicles were produced in 1926. In 2018, Mercedes-Benz was the largest seller of premium vehicles in the world, having sold 2.31 million passenger cars.[8]The companys origins lie in Daimler-Motoren-Gesellschafts 1901 Mercedes and Karl Benzs 1886 Benz Patent-Motorwagen, which is widely regarded as the first internal combustion engine in a self-propelled automobile. The slogan for the brand is "the best or nothing".'
     elif brand == 'audi':
         dpage = 'apage.html'
-    return render_template(dpage)
+        info = 'Audi AG (commonly referred to as Audi) is a German automotive manufacturer of luxury vehicles headquartered in Ingolstadt, Bavaria, Germany. As a subsidiary of its parent company, the Volkswagen Group, Audi produces vehicles in nine production facilities worldwide.The origins of the company are complex, going back to the early 20th century and the initial enterprises (Horch and the Audiwerke) founded by engineer August Horch; and two other manufacturers (DKW and Wanderer), leading to the foundation of Auto Union in 1932. The modern Audi era began in the 1960s, when Auto Union was acquired by Volkswagen from Daimler-Benz. After relaunching the Audi brand with the 1965 introduction of the Audi F103 series, Volkswagen merged Auto Union with NSU Motorenwerke in 1969, thus creating the present-day form of the company.The company name is based on the Latin translation of the surname of the founder, August Horch. Horch, meaning "listen" in German, becomes audi in Latin. The four rings of the Audi logo each represent one of four car companies that banded together to create Audis predecessor company, Auto Union. Audis slogan is Vorsprung durch Technik, meaning "Being Ahead through Technology". Audi, along with fellow German marques BMW and Mercedes-Benz, is among the best-selling luxury automobile brands in the world.'
+    return render_template(dpage, inf = info)
 
 @app.route("/moneypage")
 def render_moneypage():
@@ -62,7 +65,8 @@ def render_moneypage():
         pric = cardict[carmod]['price']
         pic = cardict[carmod]['img']
         cname = cardict[carmod]['name']
-    return render_template('moneypage.html', cheese = pric, broto = pic, nam = cname)
+    dbloon = (pric / 378)
+    return render_template('moneypage.html', cheese = pric, broto = pic, nam = cname, db = dbloon)
 
 if __name__=="__main__":
     app.run(debug=False)
