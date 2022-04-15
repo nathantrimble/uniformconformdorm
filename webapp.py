@@ -59,7 +59,7 @@ def render_moneypage():
      "W116": {"price":200000, "img":"w116.jpg", "name":"Maybach (2015-2022)"},
     }
 
-    carmod = request.args['models']
+    carmod = request.form['models']
 
     if  carmod in cardict:
         pric = cardict[carmod]['price']
